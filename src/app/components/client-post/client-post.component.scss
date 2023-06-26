@@ -1,0 +1,42 @@
+@import "../../../assets/styles/abstracts/mixins";
+
+.container {
+  @include flex-middle();
+  height: 100vh;
+}
+
+.form {
+  width: 31.25rem;
+  height: 25rem;
+}
+
+.form-title {
+  @include flex-middle();
+  border-radius: 4px;
+  background: linear-gradient(90deg, #e41937 0%, #a92465 57.81%, #5237ac 100%);
+  width: 100%;
+  height: 3.125rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5625rem;
+}
+mat-form-field {
+  width: 100%;
+}
+
+.button-primary {
+  @include button-sizing(7.3125rem, #5237ac, #fff);
+}
+
+.button-secondary {
+  @include button-sizing(9.9375rem, #d9d9d9, #000);
+}
+
+.align-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.invalid-input {
+  border-color: red;
+}

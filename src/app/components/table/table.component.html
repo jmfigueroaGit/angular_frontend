@@ -1,0 +1,38 @@
+<table mat-table [dataSource]="dataSource">
+  <ng-container
+    *ngFor="let column of columns"
+    [matColumnDef]="column.columnDef"
+  >
+    <th mat-header-cell class="center-header" *matHeaderCellDef>
+      {{ column.header }}
+    </th>
+    <td
+      mat-cell
+      class="center-data"
+      *matCellDef="let element"
+      [ngSwitch]="column.columnDef"
+    >
+      <!-- Display icons for action column -->
+      <ng-container *ngSwitchCase="'action'">
+        <button mat-icon-button (click)="editRow(element)">
+          <mat-icon svgIcon="edit"></mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteRow(element)">
+          <mat-icon svgIcon="delete"></mat-icon>
+        </button>
+      </ng-container>
+      <!-- Display regular data for other columns -->
+      <ng-container *ngSwitchDefault>{{
+        element[column.columnDef]
+      }}</ng-container>
+    </td>
+  </ng-container>
+
+  <tr
+    class="custom-header"
+    mat-header-row
+    *matHeaderRowDef="getColumnDefs()"
+  ></tr>
+
+  <tr mat-row *matRowDef="let row; columns: getColumnDefs()"></tr>
+</table>

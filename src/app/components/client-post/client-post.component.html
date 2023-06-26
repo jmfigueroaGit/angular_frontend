@@ -1,0 +1,47 @@
+<div class="container">
+  <form class="form" [formGroup]="clientForm" (ngSubmit)="submitForm()">
+    <h2 class="form-title">Client Information</h2>
+
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input
+        matInput
+        formControlName="first_name"
+        [ngClass]="{
+          'invalid-input':
+            formSubmitted && clientForm.get('first_name')?.invalid
+        }"
+      />
+      <mat-error *ngIf="formSubmitted && clientForm.get('last_name')?.invalid"
+        >First Name is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="last_name" />
+      <mat-error *ngIf="formSubmitted && clientForm.get('last_name')?.invalid"
+        >Last Name is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Department</mat-label>
+      <input matInput formControlName="department" />
+      <mat-error *ngIf="formSubmitted && clientForm.get('department')?.invalid"
+        >Department is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Notes</mat-label>
+      <input matInput formControlName="notes" />
+    </mat-form-field>
+    <div class="align-button">
+      <button class="button-secondary" (click)="openModal()" type="button">
+        View Records
+      </button>
+      <button class="button-primary" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

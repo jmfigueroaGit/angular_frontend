@@ -1,0 +1,48 @@
+<div class="container">
+  <form class="form" [formGroup]="clientForm" (ngSubmit)="update()">
+    <h2 class="form-title" mat-dialog-title>Update Information</h2>
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        formControlName="first_name"
+        placeholder="First Name"
+        required
+      />
+      <mat-error *ngIf="isFieldInvalid('first_name') && formSubmitted"
+        >First Name is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        formControlName="last_name"
+        placeholder="Last Name"
+        required
+      />
+      <mat-error *ngIf="isFieldInvalid('last_name') && formSubmitted"
+        >Last Name is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        formControlName="department"
+        placeholder="Department"
+        required
+      />
+      <mat-error *ngIf="isFieldInvalid('department') && formSubmitted"
+        >Department is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input matInput formControlName="notes" placeholder="Notes" />
+    </mat-form-field>
+
+    <div class="align-button">
+      <button class="button-primary" type="submit">Update</button>
+    </div>
+  </form>
+</div>

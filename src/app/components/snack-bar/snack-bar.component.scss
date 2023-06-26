@@ -1,0 +1,11 @@
+@import "../../../assets/styles/abstracts/mixins";
+
+.check-circle {
+  width: 17.875rem;
+  @include flex-middle();
+  span {
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 0.7rem;
+  }
+}

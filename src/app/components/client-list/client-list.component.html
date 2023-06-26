@@ -1,0 +1,9 @@
+<div class="table-container mat-elevation-z8">
+  <h1>View Records</h1>
+  <app-table
+    [columns]="tableColumns"
+    [dataSource]="clients"
+    (edit)="onEdit($event)"
+    (delete)="onDelete($event)"
+  ></app-table>
+</div>

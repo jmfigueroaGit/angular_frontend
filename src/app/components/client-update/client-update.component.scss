@@ -1,0 +1,30 @@
+.form {
+  padding: 2.13rem 3rem 3.12rem;
+}
+mat-form-field {
+  width: 100%;
+}
+.form-title {
+  width: 100%;
+  padding: 0;
+  color: #000;
+  font-size: 1.875rem;
+}
+.container {
+  width: 37.5rem;
+}
+
+.align-button {
+  display: flex;
+  justify-content: flex-end;
+}
+.button-primary {
+  width: 7.3125rem;
+  height: 3.125rem;
+  border-radius: 4px;
+  background: #5237ac;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  margin: 0 0 0 1.25rem;
+}

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Client } from './client.model';
+import { Client } from '../models/client.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ClientService {
-  private baseUrl = 'http://localhost:3000/api/clients'; // Update with your server's URL
+  private baseUrl = 'http://localhost:3000/api/clients';
 
   constructor(private http: HttpClient) {}
 
